@@ -37,3 +37,32 @@ uery($number_of_repos:Int!){
    }
 }
 ```
+```
+{
+  viewer {
+    login
+    starredRepositories {
+      totalCount
+    }
+    repositories(first: 3) {
+      edges {
+        node {
+          name
+          stargazers {
+            totalCount
+          }
+          forks {
+            totalCount
+          }
+          watchers {
+            totalCount
+          }
+          issues(states:[OPEN]) {
+            totalCount
+          }
+        }
+      }
+    }
+  }
+}
+```
